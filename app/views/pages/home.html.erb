@@ -1,0 +1,58 @@
+<div class="jumbotron center">
+		<% if user_signed_in? %>
+			<h1>SigNetwork</h1>
+			<p>Welcome! Please choose one of the following options.</p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="container">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h2><%= link_to "Payroll Exception" %></h2>
+							</div>
+							<div class="panel panel-body">
+								<p>Confidential Database of Signet Health Corporation Employees' reported Vacation, Holiday and Sick time off.</p>
+							</div>	
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-4">
+					<div class="container">	
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h2><%= link_to "Census" %></h2>
+							</div>
+							<div class="panel panel-body">
+								<p>Signet Health Corporation's Census-tracking database system. </p>
+							</div>		
+						</div>
+					</div>
+				</div>	
+				<div class="col-md-4">
+					<div class="container">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h2><%= link_to "Hot Deals" %></h2>
+							</div>	
+							<div class="panel panel-body">
+								<p>A compilation of all hospital contract deals in the sales and development process including leads, prospects and former hospital targets.</p>
+							</div>	
+						</div>
+					</div>
+				</div>	
+				</div>
+			</div>
+
+		<% else %>
+			<h1>SigNetwork</h1>
+			<p>Signet Health's Online Database</p>
+			<p>
+				<%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+				<%= link_to "Create an Account", new_user_registration_path, class: "btn btn-success" %>
+			</p>	
+			<p>
+				<%= link_to "Visit Signet Health", 'http://www.signethealth.com', class: "btn btn-warning" %>
+			</p>
+			
+		<% end %>	
+	
+</div>

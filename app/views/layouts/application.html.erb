@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payroll</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<% if user_signed_in? %>
+		<%= render 'layouts/header' %>
+	<% else %>
+		<%= render 'layouts/header_blank' %>	
+	<% end %>	
+		
+
+	<div class="container">
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-info") %>
+		<% end %>
+		<%= yield %>
+	</div>
+
+
+</body>
+	<div class="panel-footer">
+		<div class="center">
+			<p>Copyright Signet Health Corporation 2014</p>
+		</div>
+	</div>	
+</html>
