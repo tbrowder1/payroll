@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805164436) do
+ActiveRecord::Schema.define(version: 20140808152219) do
+
+  create_table "payroll_excepts", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "payroll_excepts", ["user_id"], name: "index_payroll_excepts_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

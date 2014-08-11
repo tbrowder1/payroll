@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @payroll_except.name %>
+</p>
+
+<% if @payroll_except.user == current_user %>
+	<%= link_to 'Edit', edit_payroll_except_path(@payroll_except) %> 
+<% end %>	
+<%= link_to 'Back', payroll_excepts_path %>

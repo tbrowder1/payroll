@@ -1,0 +1,21 @@
+<%= form_for(@payroll_except) do |f| %>
+  <% if @payroll_except.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payroll_except.errors.count, "error") %> prohibited this payroll_except from being saved:</h2>
+
+      <ul>
+      <% @payroll_except.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

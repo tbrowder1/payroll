@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :payroll_excepts
+
   devise_for :users
   root "pages#home"
 
