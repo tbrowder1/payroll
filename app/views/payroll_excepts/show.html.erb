@@ -1,11 +1,61 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-dafault">
+	<div class="panel-heading">
+		<h1>Payroll Exception</h1>
+		<%= link_to 'Back', payroll_excepts_path, class: "btn btn-primary" %>
+	</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @payroll_except.name %>
-</p>
 
-<% if @payroll_except.user == current_user %>
-	<%= link_to 'Edit', edit_payroll_except_path(@payroll_except) %> 
-<% end %>	
-<%= link_to 'Back', payroll_excepts_path %>
+	<div class="panel-body">
+		<p id="notice"><%= notice %></p>
+		<div class="row">
+			<div class="col-md-6">
+				<p>
+				  <strong>Name:</strong>
+				  <%= @payroll_except.name %>
+				</p>
+			</div>
+			<div class="col-md-6">	
+				<p>
+				  <strong>Location:</strong>
+				  <%= @payroll_except.location %>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">		
+				<p>
+				  <strong>Type of Exception:</strong>
+				  <%= @payroll_except.typeofexception %>
+				</p>
+			</div>
+			<div class="col-md-6">	
+				<p>
+				  <strong>Total Hours:</strong>
+				  <%= @payroll_except.totalhours %>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">		
+				<p>
+				  <strong>Date:</strong>
+				  <%= @payroll_except.date %>
+				</p>
+			</div>
+		</div>		
+		<div class="row">
+			<div class="col-md-6">	
+				<p>
+				  <strong>Comments:</strong>
+				  <%= @payroll_except.comments %>
+				</p>
+			</div>	
+		</div>	
+	</div>
+
+	<div class="panel-footer">
+		<% if @payroll_except.user == current_user %>
+			<%= link_to 'Edit', edit_payroll_except_path(@payroll_except), class: "btn btn-success" %> 
+		<% end %>	
+	</div>
+</div>

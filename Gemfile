@@ -44,3 +44,6 @@ group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'bootstrap-datepicker-rails'
+gem 'safe_attributes'
+

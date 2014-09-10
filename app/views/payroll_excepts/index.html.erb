@@ -1,31 +1,47 @@
-<h1>Listing payroll_excepts</h1>
+<div class="panel panel-default" >
+  <div class="panel-heading" >
+    <h1>Payroll Exceptions</h1>
+      <div class="form-group">
+          <%= link_to 'Add Payroll Exception', new_payroll_except_path, class: "btn btn-success" %>
+          <%= link_to 'My Apps', root_path, class: "btn btn-primary" %>
+      </div> 
+  </div>
 
-<table>
+
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
-      <th>User Email</th>
+      <th>Location</th>
+      <th>Type of Exception</th>
+      <th>Total Hours</th>
+      <th>Comments</th>
+      <th>Date</th>
       <th colspan="3"></th>
     </tr>
+   
   </thead>
+
 
   <tbody>
     <% @payroll_excepts.each do |payroll_except| %>
       <tr>
-        <td><%= payroll_except.name %></td>
-        <th><%= payroll_except.user.email if payroll_except.user %></td>
-        <td><%= link_to 'Show', payroll_except %></td> 
         <% if payroll_except.user == current_user %>
+          <td><%= payroll_except.name %></td>
+          <td><%= payroll_except.location %></td>
+          <td><%= payroll_except.typeofexception %></td>
+          <td><%= payroll_except.totalhours %></td>
+          <td><%= payroll_except.comments %></td>
+          <td><%= payroll_except.date %></td>
+          <td><%= link_to 'Show', payroll_except %></td> 
           <td><%= link_to 'Edit', edit_payroll_except_path(payroll_except) %></td>
-          <td><%= link_to 'Destroy', payroll_except, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-
+        <% end %>  
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Payroll except', new_payroll_except_path %>
-<%= link_to 'My Apps', root_path %>
+  
+    
+     
+</div>

@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1><%= 'Hot Deal - ' +@deal.hospital %></h1>
+		<%= link_to 'Back', deals_path, class: "btn btn-primary" %>
+		<%= link_to 'Edit', edit_deal_path(@deal), class: "btn btn-success" %> 
+	</div>	
+
+
+	<div class="panel-body">
+		<p id="notice"><%= notice %></p>
+			<div class="row">
+				<div class="col-md-6">
+					<p>
+					  <strong>Hospital:</strong>
+					  <%= @deal.hospital %>
+					</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>Salesman</strong>
+						<%= @deal.salesman %>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p>
+						<strong>City:</strong>
+						<%= @deal.city %>
+					</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>State:</strong>
+						<%= @deal.state %>
+					</p>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<p>
+						<strong>Program</strong>
+						<%= @deal.program %>
+					</p>
+				</div>
+				<div class=
+	</div>					
+</div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :deals
+
   resources :payroll_excepts
 
   devise_for :users

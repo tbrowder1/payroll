@@ -11,13 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808152219) do
+ActiveRecord::Schema.define(version: 20140905204928) do
+
+  create_table "deals", force: true do |t|
+    t.string   "hospital"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+    t.string   "program"
+    t.integer  "beds"
+    t.string   "salesman"
+    t.string   "fydate"
+    t.string   "projstart"
+    t.string   "operator"
+    t.string   "contract"
+    t.string   "update"
+    t.string   "referred"
+    t.string   "status"
+    t.string   "activity"
+  end
 
   create_table "payroll_excepts", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "location"
+    t.string   "typeofexception"
+    t.integer  "totalhours"
+    t.string   "comments"
+    t.string   "date"
   end
 
   add_index "payroll_excepts", ["user_id"], name: "index_payroll_excepts_on_user_id"

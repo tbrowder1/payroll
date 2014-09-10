@@ -56,12 +56,13 @@ class PayrollExceptsController < ApplicationController
     end
 
     def correct_user
-      @payroll_except = current_user.pins.find_by(id: params[:id])
+      @payroll_except = current_user.payroll_excepts.find_by(id: params[:id])
       redirect_to payroll_excepts_path, notice: "Not authorized to edit this Payroll Exception" if @payroll_except.nil?
     end  
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payroll_except_params
-      params.require(:payroll_except).permit(:name)
+      params.require(:payroll_except).permit(:name, :location, :typeofexception, :totalhours, :comments, :date)
+      
     end
 

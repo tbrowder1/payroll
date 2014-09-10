@@ -1,0 +1,131 @@
+<%= form_for(@deal) do |f| %>
+  <% if @deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
+
+      <ul>
+      <% @deal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="panel-body">
+    
+    <h3> Hospital Details </h3>
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :hospital %><br>
+              <%= f.text_field :hospital, class: "form-control" %>
+            </div>
+          </div>    
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :city %><br>
+              <%= f.text_field :city, class: "form-control" %>
+            </div> 
+          </div>
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :state %><br>
+              <%= f.text_field :state, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        
+        <div class="row">  
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :program %><br>
+              <%= f.text_field :program, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :beds %><br>
+              <%= f.text_field :beds, class: "form-control" %>      
+            </div>
+          </div>        
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :fydate, 'FY Date' %>
+              <%= f.date_field :fydate, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :projstart, 'Project Start Date' %>
+              <%= f.date_field :projstart, class: 'form-control' %>
+            </div>
+          </div>    
+        </div>
+
+        <br>
+
+        <div class='row'>
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :salesman %><br>
+              <%= f.select(:salesman, options_for_select([[''], ['Curry'], ['Kestler'], ['Stegall']]), {}, class: "form-control") %>
+            </div>
+          </div> 
+          <div class="col-md-3">
+            <div class='field'>
+              <%= f.label :operator %><br>
+              <%= f.select(:operator, options_for_select([[''], ['Anderson'], ['Deardorff'], ['Hill']]), {}, class: 'form-control') %>  
+            </div>
+          </div> 
+          <div class="col-md-3">
+            <div class='field'>
+              <%= f.label :contract, 'Contract Type' %> <br>
+              <%= f.select(:contract, options_for_select([[''], ['Existing'], ['Expansion'], ['Startup']]), {}, class: 'form-control') %>
+            </div>
+          </div> 
+          <div class='col-md-3'>
+            <div class='field'>
+              <%= f.label :referred, 'Referred By' %><br>
+              <%= f.text_field :referred, class: 'form-control' %>
+            </div>
+          </div>      
+        </div>    
+      </div> 
+    
+    <br>
+
+    <h3>Deal Status</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class='field'>
+              <%= f.label :status, 'Deal Status' %><br>
+              <%= f.select(:status, options_for_select([[''], ['Contract - Active'], ['Contract - Signed/Unopened'], ['Contract - Terminated'], ['Hot Deal - A (Post Proposal)'], ['Hot Deal - B (Post Proposal)'], ['Hot Deal - C (Pending Proposal)'], ['Lead'], ['Post Proposal - Delayed Decision'], ['Prospect - Active'], ['Prospect - Inactive'], ['Proposal - Rejected']]), {}, class: 'form-control') %>
+            </div>  
+          </div>
+        </div>
+        <br>
+        <div class='row'>
+          <div class='col-md-8'>
+            <div class='input-group'>
+              <%= f.label :activity, 'Activity' %>
+              <span class="input-group-addon">fd</span>
+              <%= f.text_area(:activity, size: '100x5', class: 'form-control') %>
+            </div>
+          </div>
+        </div>      
+      </div>
+  </div>
+
+  <div class="panel-footer">      
+    <div class="actions">
+      <%= f.submit class: "btn btn-success" %>
+    </div>
+  </div>
+
+
+<% end %>
