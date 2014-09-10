@@ -1,38 +1,38 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h1>Hot Deals</h1>
+    <h1>Hot Deals - List All</h1>
       <div class="form-group">
         <%= link_to "Add Hot Deal", new_deal_path, class: "btn btn-success" %>
         <%= link_to "My Apps", root_path, class: "btn btn-primary" %>
       </div>
   </div>      
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Salesman</th>
-      <th>Hospital</th>
-      <th>Program</th>
-      <th>Beds</th>
-      <th>FY Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @deals.each do |deal| %>
+  <table class="table table-condensed">
+    <thead>
       <tr>
-        <td><%= deal.salesman %></td>
-        <td><%= deal.hospital %></td>
-        <td><%= deal.program %></td>
-        <td><%= deal.beds %></td>
-        <td><%= deal.fydate %></td>
-        <td><%= link_to 'Show', deal %></td>
-        <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
+        <th>Salesman</th>
+        <th>Hospital</th>
+        <th>Program</th>
+        <th>Beds</th>
+        <th>FY Date</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @deals.each do |deal| %>
+        <tr>
+          <td><%= deal.salesman %></td>
+          <td><%= deal.hospital %></td>
+          <td><%= deal.program %></td>
+          <td><%= deal.beds %></td>
+          <td><%= deal.fydate %></td>
+          <td><%= link_to 'Show', deal %></td>
+          <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 
 
