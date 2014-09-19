@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140905204928) do
     t.string   "projstart"
     t.string   "operator"
     t.string   "contract"
-    t.string   "update"
     t.string   "referred"
     t.string   "status"
     t.string   "activity"
