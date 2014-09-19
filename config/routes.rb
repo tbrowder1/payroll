@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :statuses
+
   resources :deals
 
   resources :payroll_excepts

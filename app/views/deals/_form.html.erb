@@ -1,4 +1,6 @@
-<%= form_for(@deal) do |f| %>
+<%= form_for([@deal, :status]) do |f| %>
+<% @status.each do |status| %>
+
   <% if @deal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
@@ -109,28 +111,28 @@
           </div>
         </div>
         <br>
-        <div class='row'>
-          <div class='col-md-8'>
-            <div class='input-group'>
-              <%= f.label :activity, 'Activity' %>
-              <%= f.text_area(:activity, size: '100x5', class: 'form-control') %>
-            </div>
-          </div>
-        </div> 
+
+    
         <div class="row">
           <div class='col-md-8'>
-            
+            <div class="field">
+              <%= status.label :description %><br>
+              <%= status.text_field :description, class: 'form-control' %>
+            </div>
             
           </div>
         </div>
+       
       </div>
   </div>
+
 
   <div class="panel-footer">      
     <div class="actions">
       <%= f.submit class: "btn btn-success" %>
     </div>
   </div>
-
-
 <% end %>
+
+
+

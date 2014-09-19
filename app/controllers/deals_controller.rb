@@ -5,6 +5,7 @@ class DealsController < ApplicationController
   # GET /deals.json
   def index
     @deals = Deal.all
+
   end
 
   # GET /deals/1
@@ -15,6 +16,7 @@ class DealsController < ApplicationController
   # GET /deals/new
   def new
     @deal = Deal.new
+    @status = Status.new { @deal.status.create }
   end
 
   # GET /deals/1/edit
@@ -25,6 +27,8 @@ class DealsController < ApplicationController
   # POST /deals.json
   def create
     @deal = Deal.new(deal_params)
+
+    @status = Status.create(params[:status])
 
     respond_to do |format|
       if @deal.save
@@ -55,7 +59,7 @@ class DealsController < ApplicationController
   # DELETE /deals/1.json
   def destroy
     @deal.destroy
-    respond_to do |format|
+    respond_to do |format| 
       format.html { redirect_to deals_url, notice: 'Deal was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -70,5 +74,6 @@ class DealsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def deal_params
       params.require(:deal).permit(:hospital, :activity, :status, :referred, :city, :state, :program, :beds, :salesman, :fydate, :projstart, :operator, :contract)
+      params.require(:status).permit(:description)
     end
 end
