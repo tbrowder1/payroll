@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919152952) do
+ActiveRecord::Schema.define(version: 20140929160406) do
 
   create_table "deals", force: true do |t|
     t.string   "hospital"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140919152952) do
     t.string   "referred"
     t.string   "status"
     t.string   "activity"
+    t.string   "rejected"
   end
 
   create_table "payroll_excepts", force: true do |t|

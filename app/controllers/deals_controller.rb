@@ -16,7 +16,7 @@ class DealsController < ApplicationController
   # GET /deals/new
   def new
     @deal = Deal.new
-    @status = Status.new { @deal.status.create }
+    #@status = Status.new { @deal.status.create }
   end
 
   # GET /deals/1/edit
@@ -28,7 +28,7 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(deal_params)
 
-    @status = Status.create(params[:status])
+    #@status = Status.create(params[:status])
 
     respond_to do |format|
       if @deal.save
@@ -39,7 +39,8 @@ class DealsController < ApplicationController
         format.json { render json: @deal.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end  
+  
 
   # PATCH/PUT /deals/1
   # PATCH/PUT /deals/1.json
@@ -74,6 +75,64 @@ class DealsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def deal_params
       params.require(:deal).permit(:hospital, :activity, :status, :referred, :city, :state, :program, :beds, :salesman, :fydate, :projstart, :operator, :contract)
-      params.require(:status).permit(:description)
+     # params.require(:status).permit(:description)
     end
+
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
