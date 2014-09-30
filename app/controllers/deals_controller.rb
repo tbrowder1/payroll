@@ -16,7 +16,7 @@ class DealsController < ApplicationController
   # GET /deals/new
   def new
     @deal = Deal.new
-    @status = Status.new { @deal.status.create }
+    #@status = Status.new { @deal.status.create }
   end
 
   # GET /deals/1/edit
@@ -28,7 +28,7 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new(deal_params)
 
-    @status = Status.create(params[:status])
+    #@status = Status.new(params[:status])
 
     respond_to do |format|
       if @deal.save

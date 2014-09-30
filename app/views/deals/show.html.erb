@@ -49,5 +49,18 @@
 						<%= @deal.created_at %>
 					</p>
 				</div>		
-	</div>					
+			</div>					
+			<div class='row'>
+				<div class-'col-md-8'>
+					<div>
+						<% if @deal.id == @status_updates.deal.id %>
+						<% @status_updates.each do |status_updates| %>
+							<tr>
+        						<td><%= status_update.description %></td>
+        					</tr>
+        				<% end %>
+        				<% end %>
+        			</div>
+        		</div>
+        	</div>				
 </div>

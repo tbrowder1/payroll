@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919152952) do
+ActiveRecord::Schema.define(version: 20140929232451) do
 
   create_table "deals", force: true do |t|
     t.string   "hospital"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140919152952) do
     t.string   "projstart"
     t.string   "operator"
     t.string   "contract"
-    t.string   "update"
     t.string   "referred"
     t.string   "status"
     t.string   "activity"
@@ -45,6 +44,13 @@ ActiveRecord::Schema.define(version: 20140919152952) do
   end
 
   add_index "payroll_excepts", ["user_id"], name: "index_payroll_excepts_on_user_id"
+
+  create_table "status_updates", force: true do |t|
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "deal_id"
+  end
 
   create_table "statuses", force: true do |t|
     t.string   "description"
